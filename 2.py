@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from PyQt5.QtWidgets import QApplication, QToolTip, QPushButton, QWidget, QMessageBox, QDesktopWidget
+from PyQt5.QtWidgets import QApplication, QToolTip, QPushButton, QWidget, QMessageBox, QDesktopWidget, QMainWindow
 from PyQt5.QtGui import QIcon, QFont
 from PyQt5.QtCore import QCoreApplication
 
-class SetCashListener(QWidget):
+class SetCashListener(QMainWindow):
 
     def __init__(self):
         super().__init__()
@@ -31,11 +31,11 @@ class SetCashListener(QWidget):
 
         self.setToolTip('This is a <b>QWidget</b> widget')
     #    self.setGeometry(300, 300, 300, 220)
-        self.resize(300, 300)
+        self.resize(600, 500)
         self.setWindowTitle('SetCashListener')
         self.center()
         self.setWindowIcon(QIcon('icon-32x32.ico'))
-
+        self.statusBar().showMessage('Set10')
         self.show()
 
     def center(self):

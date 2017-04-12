@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+
 import sys
-from PyQt5.QtWidgets import QWidget, QMessageBox, QApplication
+from PyQt5.QtWidgets import QMainWindow, QApplication
 
 
-class Example(QWidget):
+class Example(QMainWindow):
 
     def __init__(self):
         super().__init__()
@@ -15,21 +16,11 @@ class Example(QWidget):
 
     def initUI(self):
 
+        self.statusBar().showMessage('Ready')
+
         self.setGeometry(300, 300, 250, 150)
-        self.setWindowTitle('Message box')
+        self.setWindowTitle('Statusbar')
         self.show()
-
-
-    def closeEvent(self, event):
-
-        reply = QMessageBox.question(self, 'Message',
-            "Are you sure to quit?", QMessageBox.Yes |
-            QMessageBox.No, QMessageBox.No)
-
-        if reply == QMessageBox.Yes:
-            event.accept()
-        else:
-            event.ignore()
 
 
 if __name__ == '__main__':
