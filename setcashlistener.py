@@ -7,6 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QIcon, QFont
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
 class Ui_Form(object):
@@ -29,6 +30,8 @@ class Ui_Form(object):
         self.tableView.setGeometry(QtCore.QRect(190, 60, 441, 411))
         self.tableView.setObjectName("tableView")
 
+
+
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
@@ -38,6 +41,7 @@ class Ui_Form(object):
         self.label.setText(_translate("Form", "Введите адрес сервера"))
         self.lineEdit.setToolTip(_translate("Form", "поле для ввода адреса сервера"))
         self.pushButton.setText(_translate("Form", "Применить"))
+
 
 
 if __name__ == "__main__":
