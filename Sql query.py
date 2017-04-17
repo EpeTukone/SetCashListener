@@ -8,8 +8,11 @@ db = pg_driver.connect(
     database='set',
     port=5432
     )
-cash = db.query("SELECT shop_number, number, trim(fiscalnum), trim(fwversion) FROM cash_cash WHERE status = 'ACTIVE'"
-                " ORDER BY shop_number, number ")
+#cash = db.query("SELECT shop_number, number, trim(fiscalnum), trim(fwversion) FROM cash_cash WHERE status = 'ACTIVE'"
+#                " ORDER BY shop_number, number ")
+cash = db.query("SELECT topology_shop.name, cash_cash.shop_number, cash_cash.number, trim(cash_cash.fiscalnum), trim(fwversion)"
+                "FROM cash_cash RIGHT OUTER JOIN topology_shop ON(cash_cash.shop_number = topology_shop.number)"
+                " WHERE status = 'ACTIVE' ORDER BY shop_number, number")
 count_cash = 0
 for i in cash:
     print(str(i))
