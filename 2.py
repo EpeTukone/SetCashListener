@@ -34,7 +34,7 @@ class SetCashListener(QMainWindow):
         self.resize(600, 500)
         self.setWindowTitle('SetCashListener')
         self.center()
-        self.setWindowIcon(QIcon('icon-32x32.ico'))
+        self.setWindowIcon(QIcon('logo_48.png'))
         self.statusBar().showMessage('Set10')
         self.show()
 
